@@ -21,7 +21,7 @@ class MessageWidget  extends WP_Widget {
 	    echo $args['before_title'] .'<a href="javascript:void(0);"  onclick="toggleMessage(\'toggle_message-element_'.$args['widget_id'].'\')" >
 	    '. $title .'</a>'.
 	$args['after_title'];
-	echo '<div class="toggle_message-element" id="toggle_message-element_'.$args['widget_id'].'" >'. $instance['toggle_message']. '</div>';
+	echo '<div class="toggle_message-element" id="toggle_message-element_'.$args['widget_id'].'" >'.nl2br($instance['toggle_message']) . '</div>';
 
 	// This is where you run the code and display the output
 	echo $args['after_widget'];
