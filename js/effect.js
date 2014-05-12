@@ -35,6 +35,7 @@ function animateFade(lastTick, eid)
     if(element.FadeTimeLeft <= elapsedTicks) {
 
 	element.style.opacity = element.FadeState == 1 ? '1' : '0';
+	element.style.display = element.FadeState == 1 ? 'block': 'none';
 	element.style.filter = 'alpha(opacity = ' + (element.FadeState == 1 ? '100' : '0') + ')';
 	element.FadeState = element.FadeState == 1 ? 2 : -2;
 	return;
@@ -47,6 +48,7 @@ function animateFade(lastTick, eid)
     }
 
     element.style.opacity = newOpVal;
+    element.style.display = 'block';
     element.style.filter = 'alpha(opacity = ' + (newOpVal*100) + ')';
     setTimeout("animateFade(" + curTick + ",'" + eid + "')", 33);
 }
